@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <style type="text/css" media="screen">
+      body {
+        font-family:Verdana;
+        background-color:#1c1c1c;
+        color: #fff;
+        margin: 0;     
+        padding: 0;
+      }
+    </style>
+    <script type="text/javascript" src="lib/jquery-1.4.2.js" charset="utf-8"></script>
+    <style type="text/css">
+      @import "lib/jquery.countdown/jquery.countdown.css";
+    </style> 
+    <script type="text/javascript" src="lib/jquery.countdown/jquery.countdown.js"></script>    
+    <script type="text/javascript" src="src/tick_tock_app.js"></script>        
+    <script type="text/javascript" charset="utf-8">    
+      $(document).ready(function () {
+        tickTock.initialize();
+      });
+    </script>
+  </head>
+  <body>
+    <div id="header">
+      <div>
+        Tick Tock
+      </div>      
+    </div>
+    <div id="container">
+      <div id="controls">
+        <form>
+          <p>
+            <input type="text" name="minutes" id="input-minutes" />
+          </p>
+          <p>
+            <input type="button" id="start-button" value="Start" />            
+          </p>
+        </form>
+      </div>
+      <div id="timer" style="background-color:#cccccc; width:260px">
+        &nbsp;
+      </div>
+      <div style="clear:both">
+        <span id="pre-def-01">
+          Pomodoro
+        </span>
+        <span id="pre-def-02">
+          Pomodoro Break
+        </span>
+      </div>
+    </div>
+  </body>
+</html>
