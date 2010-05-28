@@ -14,13 +14,21 @@ APP.timerConstructor = function (spec) {
   };
   
   that.clockStopped = function () {
-    alert("DONE");    
+    APP.console.append(APP.console.getDate() + APP.messages.timerEnd);
+    alert(APP.messages.timerComplete);    
   };
     
   that.clockWatch = function (periods) {
-    if(periods[5] === 0 && periods[6] === 30) {
-      console.warn("Only 30 seconds left!!!");
+    if (periods[5] === 0 && periods[6] === 30) {
+      APP.console.append(APP.messages.thirtySecondsLeft, "yellow");
     }
+    else if (periods[5] === 0 && periods[6] === 20) {
+      APP.console.append(APP.messages.twentySecondsLeft, "orange");     
+    }
+    else if (periods[5] === 0 && periods[6] === 10) {
+      APP.console.append(APP.messages.tenSecondsLeft, "red");  
+    }    
+      
   };
   
   that.getCountDownOptions = function (value) {

@@ -3,10 +3,10 @@
 <!-- These values are edited/maintained by Titanium Developer -->
 <id>com.jessehouse.tick-tock-desktop</id>
 <name>tick-tock-desktop</name>
-<version>1.0</version>
+<version>0.1.1</version>
 <publisher>house</publisher>
 <url>http://house9.blogspot.com/</url>
-<icon>default_app_logo.png</icon>
+<icon>clock.png</icon>
 <copyright>2010 by house</copyright>
 <!-- Window Definition - these values can be edited -->
 <window>

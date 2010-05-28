@@ -1,104 +1,37 @@
 <html>
   <head>
-    <style type="text/css" media="screen">
-      body {
-        font-family:Verdana;
-        background-color:#1c1c1c;
-        color: #fff;
-        margin: 0;
-        padding: 0;
-      }
-
-      #header {
-        font-size: 1.2em;
-        font-weight: bold;
-        height: 50px;
-        line-height: 50px;
-        padding-left: 50px;
-        background: url(images/clock.png) no-repeat;
-        margin-left: 10px;
-        margin-top: 5px;
-      }
-
-      #container {
-        margin-left: 10px;
-        margin-top: 5px;
-        clear:both;
-        width:700px;
-      }
-
-      .zone {
-        width:260px;
-        height: 50px;
-        line-height: 50px;
-        padding-left: 50px;
-        font-size: 1.2em;
-        border: solid 1px #cccccc;
-        margin-bottom: 10px;
-      }
-    </style>
+    <link rel="stylesheet" href="css/application.css" type="text/css" media="screen" charset="utf-8">
     <script type="text/javascript" src="lib/jquery-1.4.2.js" charset="utf-8"></script>
     <style type="text/css">
       @import "lib/jquery.countdown/jquery.countdown.css";
     </style>
     <script type="text/javascript" src="lib/jquery.countdown/jquery.countdown.js"></script>
-    <script type="text/javascript" charset="utf-8">
+    <script type="text/javascript" charset="utf-8"><!--
       var APP = {};
+      APP.undef; // undefined constant
+      // -->
     </script>
-
-    <script type="text/javascript" src="src/tick_tock_timer.js"></script>
-    <script type="text/javascript" src="src/tick_tock_button.js"></script>
-
-    <script type="text/javascript" charset="utf-8">
+    <script type="text/javascript" src="src/messages.js"></script>    
+    <script type="text/javascript" src="src/console.js"></script>
+    <script type="text/javascript" src="src/timer.js"></script>
+    <script type="text/javascript" src="src/timer_button.js"></script>
+    <script type="text/javascript" src="src/application.js"></script>
+    <script type="text/javascript" charset="utf-8"><!--
       $(document).ready(function () {
-        var timer = APP.timerConstructor({id: "timer"});
-        timer.initialize({default_until_value_id: "input-min"});
-
-        // *******************************************
-        var pomodoroButton = APP.buttonConstructor({
-          id: "start-pomodoro-button",
-          time: 25,
-          timer: timer
-        });
-        pomodoroButton.initialize();
-
-        // *******************************************
-        var breakButton = APP.buttonConstructor({
-          id: "start-break-button",
-          time: "5",
-          timer: timer
-        });
-        breakButton.initialize();
-
-        // *******************************************
-        var regularStartButton = APP.buttonConstructor({
-          id: "start-button",
-          timer: timer,
-        }); // TODO: extend regularStartButton with own initialize method + others
-
-        regularStartButton.initialize();
-        //function () {
-        //  $("#start-button").click(function () {
-        //    if ($("#input-minutes").val() == "") {
-        //      alert("Number of minutes is required");
-        //      return false;
-        //    }
-
-        //    regularStartButton.countDownChange();
-        //  });
-        //});
-
+        APP.run();
       });
+      // -->
     </script>
   </head>
   <body>
-    <div id="header">
+    
+    <div id="header" style="background: url(images/clock.png) no-repeat;">
       Tick Tock Desktop
     </div>
+    
     <div id="container">
-
+      <!-- right side -->
       <div style="float:right; position:relative">
-
         <div id="start-pomodoro-button" title="25 minute pomodoro" class="zone" style="background: url(images/button_play_green.png) no-repeat;">
           Start Pomodoro
         </div>
@@ -107,37 +40,55 @@
           Take a break
         </div>
 
-        <div class="zone" style="height:auto;">
+        <div class="zone">
           <form>
-            <p>
-              <select name="minutes">
-                <option>&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;</option>
-                <option value="5">5</option>
-                <option value="10">10</option>
-                <option value="15">15</option>
-                <option value="20">20</option>
-                <option value="25">25</option>
-                <option value="30">30</option>
-                <option value="35">35</option>
-                <option value="40">40</option>
-                <option value="45">45</option>
-                <option value="50">50</option>
-                <option value="55">55</option>
-              </select>
+            <select name="minutes" id="minutes">
+              <option value="">&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+              <option value="25">25</option>
+              <option value="30">30</option>
+              <option value="35">35</option>
+              <option value="40">40</option>
+              <option value="45">45</option>
+              <option value="50">50</option>
+              <option value="55">55</option>
+              <option value="60">1 hour</option>              
+              <option value="75">1 hour 15</option>              
+              <option value="90">1 hour 30</option>                            
+              <option value="105">1 hour 45</option>                            
+              <option value="120">2 hours</option>                            
+            </select>
 
-              <input type="button" id="start-button" value="Start" />
-            </p>
+            <input type="button" id="start-button" value="Start" />
           </form>
         </div>
-
       </div>
 
-      <div class="zone">
-        <div id="timer" style="background-color:#cccccc; width:260px">
-          &nbsp;
+      <!-- left side -->
+      <div>
+        <div class="zone">
+          <div id="timer">
+            &nbsp;
+          </div>
         </div>
       </div>
-    </div>
+      
+      <!-- bottom full -->
+      <br style="clear:both;" />
+      <div id="console-container">
+        <div id="console">
+
+        </div>
+      </div>        
+
+    </div><!-- end container -->
   </body>
 </html>
 
