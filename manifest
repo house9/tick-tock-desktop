@@ -4,7 +4,7 @@
 #image:clock.png
 #url:http://house9.blogspot.com/
 #guid:48562c95-cf14-4978-b5a3-10dbb32f000f
-#desc:No description provided
+#desc:Pomodoro timer
 #type:desktop
 runtime:1.0.0
 api:1.0.0
