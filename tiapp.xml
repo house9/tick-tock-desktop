@@ -13,10 +13,10 @@
 <id>initial</id>
 <title>tick-tock-desktop</title>
 <url>app://index.html</url>
-<width>700</width>
+<width>730</width>
 <max-width>3000</max-width>
 <min-width>0</min-width>
-<height>500</height>
+<height>400</height>
 <max-height>3000</max-height>
 <min-height>0</min-height>
 <fullscreen>false</fullscreen>
@@ -27,3 +27,4 @@
 <closeable>true</closeable>
 </window>
 </ti:app>
+
