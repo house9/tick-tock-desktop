@@ -15,18 +15,22 @@ APP.timerConstructor = function (spec) {
   
   that.clockStopped = function () {
     APP.console.append(APP.console.getDate() + APP.messages.timerEnd);
+    that.playSound("CRASHCYM.WAV");    
     alert(APP.messages.timerComplete);    
   };
     
   that.clockWatch = function (periods) {
     if (periods[5] === 0 && periods[6] === 30) {
       APP.console.append(APP.messages.thirtySecondsLeft, "yellow");
+      that.playSound("SONAR.WAV");      
     }
     else if (periods[5] === 0 && periods[6] === 20) {
       APP.console.append(APP.messages.twentySecondsLeft, "orange");     
+      that.playSound("BEEPPURE.WAV");                  
     }
     else if (periods[5] === 0 && periods[6] === 10) {
       APP.console.append(APP.messages.tenSecondsLeft, "red");  
+      that.playSound("BADUMM.WAV");            
     }    
       
   };
@@ -43,7 +47,13 @@ APP.timerConstructor = function (spec) {
       onExpiry: that.clockStopped,
       onTick: that.clockWatch
     };
-  }
+  };
+  
+  that.playSound = function (file_name) {
+    // check user-agent is titanium?
+    var sound = Titanium.Media.createSound('app://sound/' + file_name);
+    sound.play();    
+  };
 
   return that;
 };
