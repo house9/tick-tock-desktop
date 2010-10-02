@@ -60,10 +60,10 @@ APP.showLogo = function () {
   
   APP.console.appendLine();             
   APP.console.append("Built on Appcelerator's Titanium platform " + APP.console.link("http://www.appcelerator.com/"));
-  APP.console.append("Sounds from Partners in Rhyme, " + APP.console.link("http://www.partnersinrhyme.com/pir/PIRsfx.shtml"));
+  APP.console.append("Sounds from SoundBible.com, " + APP.console.link("http://soundbible.com/"));
   APP.console.append("jQuery plugin: Countdown by Keith Wood, " + APP.console.link("http://keith-wood.name/countdown.html"));
   APP.console.append("jQuery " + APP.console.link("http://jquery.com/"));
-  APP.console.append("Using icon set 'Flavour' series by Oliver (@mywayhome) via " + APP.console.link("http://www.smashingmagazine.com/"));
+  APP.console.append("Using 'Function Icon Set' " + APP.console.link("http://wefunction.com/2008/07/function-free-icon-set/"));
   APP.console.appendLine();         
   APP.console.append("Credits");
   APP.console.append("");

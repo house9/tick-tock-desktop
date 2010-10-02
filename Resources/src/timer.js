@@ -15,22 +15,22 @@ APP.timerConstructor = function (spec) {
   
   that.clockStopped = function () {
     APP.console.append(APP.console.getDate() + APP.messages.timerEnd);
-    that.playSound("CRASHCYM.WAV");    
+    that.playSound("Car-Alarm-SoundBible.com-2096911689.mp3");    
     alert(APP.messages.timerComplete);    
   };
     
   that.clockWatch = function (periods) {
     if (periods[5] === 0 && periods[6] === 30) {
       APP.console.append(APP.messages.thirtySecondsLeft, "yellow");
-      that.playSound("SONAR.WAV");      
+//      that.playSound("SONAR.WAV");      
     }
     else if (periods[5] === 0 && periods[6] === 20) {
       APP.console.append(APP.messages.twentySecondsLeft, "orange");     
-      that.playSound("BEEPPURE.WAV");                  
+//      that.playSound("BEEPPURE.WAV");                  
     }
     else if (periods[5] === 0 && periods[6] === 10) {
       APP.console.append(APP.messages.tenSecondsLeft, "red");  
-      that.playSound("BADUMM.WAV");            
+//      that.playSound("BADUMM.WAV");            
     }    
       
   };
