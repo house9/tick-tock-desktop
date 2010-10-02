@@ -1,27 +1,18 @@
 TickTock-Desktop
 ==================================================
 
-just an small toy app built on Appcelerator's Titanium platform
+just a small toy app built on Appcelerator's Titanium platform
 http://www.appcelerator.com/
 
 A timer application with presets for Pomodoro 
  - 25 minute work session
  - 5 minute break 
 
-Learn more or download the binaries, see http://house9.blogspot.com/2010/06/pomodoro-timer-application.html
+Learn more or download the binaries at 
+http://house9.blogspot.com/2010/06/pomodoro-timer-application.html
 
 
 
 http://www.pomodorotechnique.com/
-
-
-Credits
-======================================
-Using iconset 'Flavour' series by Oliver (@mywayhome) via http://www.smashingmagazine.com/
-http://www.smashingmagazine.com/2010/04/15/the-ultimate-free-web-designer-s-icon-set-750-icons-incl-psd-sources/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed:+SmashingMagazine+(Smashing+Magazine)
-jQuery http://jquery.com/
-jQuery plugin: Countdown by Keith Wood, http://keith-wood.name/countdown.html
-Built on Appcelerator's Titanium platform
-
 
 
